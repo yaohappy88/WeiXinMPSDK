@@ -65,11 +65,11 @@ Your project.json doesn't have a runtimes section. You should add '""runtimes"":
 
         private static void Run()
         {
-            Console.WriteLine("清理开始……");
+            Console.WriteLine("清理开始……start:");
 
             CleanDir("../src/");
 
-            Console.WriteLine("清理完毕，点击回车键再清理一次，其他任意键退出（电源键除外）...");
+            Console.WriteLine("clean up done, 清理完毕，点击回车键再清理一次，其他任意键退出（电源键除外）...");
             if (Console.ReadKey().KeyChar == (int)ConsoleKey.Enter)
             {
                 Run();
@@ -90,12 +90,12 @@ Your project.json doesn't have a runtimes section. You should add '""runtimes"":
                 {
                     try
                     {
-                        Console.WriteLine("开始清除文件夹：" + dir);
+                        Console.WriteLine("开始清除文件夹：clean fodule" + dir);
                         System.IO.Directory.Delete(dir, true);
                     }
                     catch (Exception e)
                     {
-                        Console.WriteLine($"清理文件夹{dir}发生错误：");
+                        Console.WriteLine("清理文件夹{dir}发生错误：error");
                         Console.WriteLine(e);
                         //throw;
                     }

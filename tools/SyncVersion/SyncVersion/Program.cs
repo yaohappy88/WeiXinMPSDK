@@ -32,7 +32,7 @@ namespace SyncVersion
                     Console.WriteLine("扫描文件：" + file);
 
                     XDocument doc = XDocument.Load(file);
-                    var versionElement = doc.Root?.Element("PropertyGroup")?.Element("Version");
+                    var versionElement = doc.Root?doc.Element("PropertyGroup")?doc.Element("Version");
                     if (versionElement != null)
                     {
                         var version = versionElement.Value;
